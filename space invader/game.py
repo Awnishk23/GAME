@@ -1,14 +1,12 @@
-import math
-import random
-
 import pygame
+import math
+
+import random
 from pygame import mixer
 
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
 background = pygame.image.load('background.png')
-
-# # Sound
 mixer.music.load("background.wav")
 mixer.music.play(-1)
 
@@ -16,14 +14,12 @@ mixer.music.play(-1)
 pygame.display.set_caption("Space Invader")
 icon = pygame.image.load('ufo.png')
 pygame.display.set_icon(icon)
-
-# Player
 playerImg = pygame.image.load('player.png')
 playerX = 370
 playerY = 480
 playerX_change = 0
 
-# Enemy
+# enemy
 enemyImg = []
 enemyX = []
 enemyY = []
@@ -38,8 +34,7 @@ for i in range(num_of_enemies):
     enemyX_change.append(4)
     enemyY_change.append(40)
 
-# Bullet
-
+# bullet
 bulletImg = pygame.image.load('bullet.png')
 bulletX = 0
 bulletY = 480
@@ -47,17 +42,12 @@ bulletX_change = 0
 bulletY_change = 10
 bullet_state = "ready"
 
-# Score
-
 score_value = 0
 font = pygame.font.Font('freesansbold.ttf', 32)
 
 textX = 10
 testY = 10
-
-# Game Over
 over_font = pygame.font.Font('freesansbold.ttf', 64)
-
 
 def show_score(x, y):
     score = font.render("Score : " + str(score_value), True, (255, 255, 255))
@@ -91,7 +81,7 @@ def isCollision(enemyX, enemyY, bulletX, bulletY):
         return False
 
 
-# Game Loop
+# game Loop
 running = True
 while running:
 
@@ -154,8 +144,6 @@ while running:
             enemyY[i] = random.randint(50, 150)
 
         enemy(enemyX[i], enemyY[i], i)
-
-    # Bullet Movement
     if bulletY <= 0:
         bulletY = 480
         bullet_state = "ready"
