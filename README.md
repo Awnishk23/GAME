@@ -10,3 +10,4 @@ and we defined the event.type to identify which keybutton is pressed and accordi
 and for creating multiple enemies we started for loop for executing multiple enemy by creating empty list and adding them using append and we also upadate the game score using function and by using font.render
 and when the enemies reaches the y coordinate which is equal to the y coordinate of spaceship then game gets over.
 for adding music we used mixer.music and we used three types of music in game
+![Screenshot 2025-07-06 221832](https://github.com/user-attachments/assets/f0ada73b-f9c7-4fac-84fb-3f397ae7b7d8)
